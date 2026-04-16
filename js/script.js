@@ -573,6 +573,24 @@ if (serviceCards.length) {
   });
 }
 
+// Tech Section Tab Switcher
+const techTabs = document.querySelectorAll('.tech-tab');
+const techPanels = document.querySelectorAll('.tech-panel');
+
+techTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const targetIndex = tab.getAttribute('data-tab');
+
+    // Remove active from all tabs and panels
+    techTabs.forEach(t => t.classList.remove('active'));
+    techPanels.forEach(p => p.classList.remove('active'));
+
+    // Activate clicked tab and matching panel
+    tab.classList.add('active');
+    techPanels[targetIndex].classList.add('active');
+  });
+});
+
 
 
 
