@@ -658,7 +658,7 @@ a {
 /* 1500px to 1799px */
 @media (min-width: 1500px) and (max-width: 1799px) {
   .hero-desc {
-    font-size: 24px !important;
+    font-size: 22px !important;
     max-width: 800px;
     line-height: 28px;
     letter-spacing: 1.2px;
@@ -707,7 +707,7 @@ a {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 5rem 2rem 48px;
 }
 
 @media (max-width: 1024px) {
@@ -883,6 +883,18 @@ a {
 .services-section {
   padding: 5rem 0;
   background-color: var(--bg);
+}
+
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-section {
+    padding: 38px 0;
+  }
 }
 
 .card {
@@ -1143,7 +1155,7 @@ a {
    SECTION 4 — PLATFORMS
 ============================================ */
 .platforms-section {
-  padding: 5rem 0;
+  padding: 5rem 0 48px;
   background: var(--bg-2);
 }
 
@@ -1400,7 +1412,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
 
 
 .genres-section {
-  padding: 5rem 0 2rem;
+  padding: 5rem 0 48px;
   background: #1F1D33;
 }
 
@@ -1662,7 +1674,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   }
 
   .acc-header {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -2120,6 +2132,12 @@ SECTION — ASSURANCE
   background: #181727;
 }
 
+@media (max-width: 1024px) {
+  .portfolio-section {
+    padding: 48px 0 2rem;
+  }
+}
+
 .containerrr {
   width: 100%;
   max-width: 1480px;
@@ -2320,7 +2338,7 @@ SECTION — ASSURANCE
 /* ─── Mobile ─── */
 @media (max-width: 640px) {
   .portfolio-section {
-    padding: 48px 0 2rem;
+    padding: 38px 0 2rem;
   }
 
   .portfolio-grid {
@@ -2412,9 +2430,15 @@ SECTION — ASSURANCE
   overflow: hidden;
 }
 
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 48px 0;
+  }
+}
+
 @media (max-width: 600px) {
   .cta-section {
-    padding: 3rem 0;
+    padding: 38px 0;
   }
 }
 
@@ -2573,6 +2597,12 @@ SECTION — ASSURANCE
   cursor: pointer;
   transition: opacity 0.2s;
   width: 60%;
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .btn-cta {
+    width: 340px;
+  }
 }
 
 @media (max-width: 640px) {
