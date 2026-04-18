@@ -21,7 +21,9 @@
   --purple-dim: rgba(123, 47, 255, 0.18);
   --cyan: #00c2ff;
   --text: #e4e4f0;
-  --muted: #8888aa;
+  --cta-bg: linear-gradient(93.58deg, #58D5D2 0%, #7A68E2 100%);
+    --cta-shadow: 0px 1px 2px 0px #1018280D;
+  --muted: #D5D5D5;
   --border: rgba(123, 47, 255, 0.22);
   --grad: linear-gradient(93.58deg, #58D5D2 0%, #7A68E2 100%);
 --font-head: 'Agency FB', 'Barlow Condensed', sans-serif;
@@ -191,6 +193,7 @@ a {
 
 .btn-secondary {
   display: inline-flex;
+  font-family: 'Roboto', sans-serif;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.8rem;
@@ -480,7 +483,7 @@ a {
   }
 
   .nav-link {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .brand-logo img {
@@ -897,6 +900,52 @@ a {
   }
 }
 
+/* Hidden on desktop by default */
+.services-mobile-shadow {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    position: relative;
+  }
+
+  /* Show shadow image only on mobile */
+  .services-mobile-shadow {
+    display: block;
+    position: absolute;
+    inset: 0;
+   opacity: 40%;
+    
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Push all content above both images */
+  .services-section .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.services-mobile-shadow-br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .services-mobile-shadow-br {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 40%;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(180deg);
+    /* flips it to match bottom-right corner */
+  }
+}
+
 .card {
   position: relative;
   width: 350px;
@@ -1084,11 +1133,27 @@ a {
   }
 }
 
-@media (min-width: 470px) and (max-width: 640px) {
+@media (min-width: 470px) and (max-width: 540px) {
   .service-arrow {
-    right: 1.1rem !important;
+    right: 0.1rem !important;
     width: 38px;
     height: 38px;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 640px) {
+  .service-arrow {
+    right: 0.9rem !important;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 740px) {
+  .service-arrow {
+    right:  -0.0rem !important;
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -1100,6 +1165,12 @@ a {
 
 .services-cta {
   text-align: center;
+transform: translateY(20px);}
+
+@media (max-width: 1024px) {
+  .services-cta {
+    transform: translateY(10px);
+  }
 }
 
 .services-cta {
@@ -1355,6 +1426,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   line-height: 24px;
   letter-spacing: 0px;
   color: var(--muted);
+  margin-bottom: 20px;
 }
 
 .ptab-number {
@@ -1530,7 +1602,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-size: clamp(16px, 1.2vw, 16px);
   line-height: 24px;
   letter-spacing: 0px;
   margin-bottom: 1.8rem;
@@ -1582,7 +1654,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   padding: 0 1.2rem 1rem;
   background: var(--bg-card);
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -1648,18 +1720,18 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   }
 
   .genres-desc {
-    font-size: 0.84rem;
+    font-size: 16px;
     margin-bottom: 1.2rem;
   }
 
   .acc-header {
     padding: 0.85rem 1rem;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .acc-body {
     padding: 0 1rem 0.9rem;
-    font-size: 0.82rem;
+    font-size: 14px;
   }
 }
 
@@ -1674,7 +1746,7 @@ font-size: clamp(1.8rem, 5vw + 1rem, 60px);
   }
 
   .acc-header {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -1749,7 +1821,6 @@ SECTION — ASSURANCE
   flex-direction: row;
   align-items: flex-start;
   gap: 1.2rem;
-  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.8rem;
@@ -1796,7 +1867,7 @@ SECTION — ASSURANCE
 .assurance-body p {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: clamp(16px, 1vw, 18px);
   line-height: 24px;
   letter-spacing: 0;
   color: var(--muted);
@@ -1830,7 +1901,7 @@ SECTION — ASSURANCE
 }
 
 /* Tablet — stack cards vertically */
-@media (max-width: 1150px) {
+@media (max-width: 1240px) {
   .assurance-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
@@ -1860,11 +1931,12 @@ SECTION — ASSURANCE
   }
 
   .assurance-body h4 {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 2;
   }
 
   .assurance-body p {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -1875,7 +1947,7 @@ SECTION — ASSURANCE
   }
 
   .assurance-body h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
@@ -1921,11 +1993,11 @@ SECTION — ASSURANCE
   }
 
   .assurance-body h4 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .assurance-body p {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -1935,7 +2007,7 @@ SECTION — ASSURANCE
   }
 
   .assurance-body h4 {
-    font-size: 16px;
+    font-size: 20px;
   }
 } */
 
@@ -2056,7 +2128,7 @@ SECTION — ASSURANCE
 
 @media (max-width: 600px) {
   .tech-tab {
-    font-size: 13px;
+    font-size: 14px;
     padding: 10px 16px 12px;
   }
 }
@@ -2212,7 +2284,7 @@ SECTION — ASSURANCE
 }
 
 .portfolio-info {
-  padding: 20px 20px 20px 8px;
+  padding: 20px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2237,7 +2309,7 @@ SECTION — ASSURANCE
   font-size: clamp(16px, 1.2vw, 16px);
   line-height: 24px;
   letter-spacing: 0px;
-  color: #aaa;
+  color: var(--muted);
   margin: 0;
 }
 
@@ -2267,7 +2339,7 @@ SECTION — ASSURANCE
 
 .meta-label {
   font-size: 16px;
-  color: #D0D5DD;
+  color: #D5D5D5;
   display: block;
 }
 
@@ -2373,7 +2445,7 @@ SECTION — ASSURANCE
   }
 
   .portfolio-info h4 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.02em;
   }
@@ -2490,11 +2562,19 @@ SECTION — ASSURANCE
 }
 
 .testimonial-card {
-  background: rgba(30, 25, 65, 0.85);
-  border: 1px solid rgba(123, 47, 255, 0.25);
+  background: rgba(31, 29, 51, 0.15);
+  /* semi-transparent dark base */
+  border: 1px solid rgba(123, 47, 255, 0.90);
+  /* slightly more visible purple border */
   border-radius: 14px;
   padding: 1.6rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  /* Safari support */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  /* subtle inner top highlight */
 }
 
 .quote-icon {
@@ -2507,7 +2587,7 @@ SECTION — ASSURANCE
 }
 
 .testimonial-quote {
-  color: var(--text);
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 1.2rem;
@@ -2556,7 +2636,7 @@ SECTION — ASSURANCE
 .cta-form input,
 .cta-form textarea {
   padding: 0.85rem 1.1rem;
-  background: rgba(30, 25, 65, 0.7);
+  background: #1F1D33;
   border: 1px solid rgba(123, 47, 255, 0.2);
   border-radius: 8px;
   color: #fff;
@@ -2586,6 +2666,7 @@ SECTION — ASSURANCE
 
 .btn-cta {
   margin-top: 0.4rem;
+  font-family: 'Roboto', sans-serif;
   padding: 0.9rem 1.5rem;
   background: linear-gradient(90deg, #4fc3f7, #7B2FFF);
   border: none;
@@ -3216,4 +3297,17 @@ color: rgba(180, 160, 220, 0.45);
   .cta-left>p {
     font-size: 20px !important;
   }
+}
+
+/* ── CTA Button Common Style ── */
+.btn-primary,
+.btn-hire,
+.btn-book-call,
+.btn-connect,
+.btn-submit,
+.btn-cta,
+.consult-submit {
+  background: var(--cta-bg) !important;
+  font-family: 'Roboto', sans-serif !important;
+  box-shadow: var(--cta-shadow) !important;
 }
