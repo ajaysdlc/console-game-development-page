@@ -159,6 +159,12 @@ a {
   margin-right: auto;
 }
 
+/* @media (max-width: 768px) {
+  .section-desc {
+    font-size: 16px;
+  }
+} */
+
 .section-desc.center {
   margin-left: auto;
   margin-right: auto;
@@ -331,21 +337,28 @@ a {
     min-height: 650px ;
   }
 }
-@media (min-width: 670px) {
+
+@media (min-width: 500px) {
   #hero {
-    min-height: 612px ;
+    min-height: 450px;
   }
 }
 
-@media (min-width: 970px) {
+@media (min-width: 670px) {
   #hero {
-    min-height: 650px ;
+    min-height: 482px ;
+  }
+}
+
+@media (min-width: 912px) {
+  #hero {
+    min-height: 530px ;
   }
 }
 
 @media (min-width: 1270px) {
   #hero {
-    min-height: 700px;
+    min-height: 620px;
   }
 }
 
@@ -584,7 +597,9 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  
+  background:
+    linear-gradient(0deg, rgba(24, 23, 39, 0.2), rgba(24, 23, 39, 0.2)),
+    radial-gradient(131.83% 67.5% at 51.18% 32.5%, rgba(24, 23, 39, 0) 0%, #181727 95.52%);
 }
 
 .hero-content {
@@ -620,7 +635,7 @@ a {
 }
 
 .hero-desc {
-  max-width: clamp(280px, 60vw, 920px);
+  max-width: clamp(280px, 99vw, 920px);
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -653,7 +668,7 @@ a {
 @media (min-width: 1024px) and (max-width: 1499px) {
   .hero-desc {
     font-size: 20px !important;
-    max-width: 800px;
+    max-width: 930px;
     line-height: 28px;
   }
 }
@@ -662,7 +677,7 @@ a {
 @media (min-width: 1500px) and (max-width: 1799px) {
   .hero-desc {
     font-size: 22px !important;
-    max-width: 800px;
+    max-width: 950px;
     line-height: 28px;
     letter-spacing: 1.2px;
   }
@@ -905,7 +920,7 @@ a {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1230px) {
   .services-section {
     position: relative;
   }
@@ -932,7 +947,7 @@ a {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1230px) {
   .services-mobile-shadow-br {
     display: block;
     position: absolute;
