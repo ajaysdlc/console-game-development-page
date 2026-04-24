@@ -2691,6 +2691,7 @@ SECTION — ASSURANCE
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
+  z-index: 100;
   transition: opacity 0.2s;
   width: 60%;
 }
