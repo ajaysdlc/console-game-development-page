@@ -1,3 +1,11 @@
+
+// ===================== BLOCKED EMAIL DOMAINS =====================
+const blockedDomains = ['gmail.com'];
+function isBusinessEmail(email) {
+  const domain = email.split('@')[1]?.toLowerCase();
+  return domain && !blockedDomains.includes(domain);
+}
+
 // ═══════════════════════════════════════
 // NAVBAR SCROLL SHADOW
 // ═══════════════════════════════════════
@@ -268,11 +276,8 @@ window.addEventListener('load', () => {
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-      email.style.borderColor = "red";
-      alert("Please enter a valid email address.");
-      return;
-    }
+    if (!emailPattern.test(email.value.trim())) { email.style.borderColor = 'red'; alert('Please enter a valid email address.'); return; }
+if (!isBusinessEmail(email.value.trim())) { email.style.borderColor = 'red'; alert('Please use your business email address. Free email providers like Gmail are not allowed.'); return; }
 
     const phonePattern = /^(\+|0)?[\d\s\-()]{7,20}$/;
     if (!phonePattern.test(phone.value.trim())) {
@@ -446,11 +451,7 @@ function validateAndSubmitBookForm() {
       check: v => v.trim().length >= 3,
       msg: 'Full name must be at least 3 characters.'
     },
-    {
-      id: 'bookEmail',
-      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
-      msg: 'Please enter a valid email address.'
-    },
+    { id: 'bookEmail', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) && isBusinessEmail(v.trim()), msg: 'Please use your business email. Free emails (Gmail, Yahoo, etc.) are not allowed.' },
     {
       id: 'bookPhone',
       check: v => /^[+\d\s\-()]{7,15}$/.test(v.trim()),
@@ -514,11 +515,7 @@ function validateAndSubmitConsult() {
       check: v => v.trim().length >= 3,
       msg: 'Full name must be at least 3 characters.'
     },
-    {
-      id: 'consultEmail',
-      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
-      msg: 'Please enter a valid email address.'
-    },
+    { id: 'consultEmail', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) && isBusinessEmail(v.trim()), msg: 'Please use your business email. Free emails (Gmail, Yahoo, etc.) are not allowed.' },
     {
       id: 'consultPhone',
       check: v => /^[+\d\s\-()]{7,15}$/.test(v.trim()),

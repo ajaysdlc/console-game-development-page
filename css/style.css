@@ -446,6 +446,9 @@ a {
   cursor: pointer;
   z-index: 1000;
   flex-shrink: 0;
+  background: transparent;
+    border: none;
+    padding: 4px;
 }
 
 .nav-toggle span {
