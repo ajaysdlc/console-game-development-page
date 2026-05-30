@@ -1,6 +1,6 @@
 
 // ===================== BLOCKED EMAIL DOMAINS =====================
-const blockedDomains = ['gmail.com'];
+const blockedDomains = [];
 function isBusinessEmail(email) {
   const domain = email.split('@')[1]?.toLowerCase();
   return domain && !blockedDomains.includes(domain);
